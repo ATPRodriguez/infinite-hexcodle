@@ -1,7 +1,7 @@
 export default class Partida {
     public secret: string;
     public guesses: string[];
-    private gameOver: boolean;
+    public gameOver: boolean;
 
 
     constructor() {

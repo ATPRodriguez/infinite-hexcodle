@@ -15,7 +15,7 @@ const Game = (props: Props) => {
   useEffect(() => {
     partidaRef.current = new Partida;
     settargetColor(partidaRef.current.secret);
-    console.log(targetColor);
+    console.log(partidaRef.current.secret);
   }, []);
 
   const handleGuess = (e: React.FormEvent<HTMLFormElement>) => {
@@ -27,6 +27,10 @@ const Game = (props: Props) => {
 
     partidaRef.current.guess(guess);
     setGuesses(partidaRef.current.guesses);
+
+    if (guess == partidaRef.current.secret) {
+      alert("Game Over!");
+    }
   }
 
   function toUpper(text: string) {
